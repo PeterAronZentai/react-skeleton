@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Cell from './Cell.jsx'
 
 
 export default React.createClass({ 
@@ -8,20 +8,22 @@ export default React.createClass({
     
     componentDidMount() {
         //id = this.props.productId
-        console.log("c2 component did mount")
     },
     
     
     componentWillReceiveProps() {
-        console.log("cwrp", arguments);
+
     },
-    
+        shouldComponentUpdate() {
+        return false
+    },
     render() {
-        console.log("render c2")
-        console.log(this.state)
-        return ( <div>{this.props.data.toString()}
-                    {this.props.children}
-                 </div>
+        
+        
+        return ( 
+                <tr>
+                    {Object.keys(this.props.data).map(key => <Cell row={this.props.data} field={key} key={key} /> )}
+                 </tr>
                  )
 
     }

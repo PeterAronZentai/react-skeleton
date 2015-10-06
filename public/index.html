@@ -4,10 +4,115 @@
     <meta charset="UTF-8" />
     <title>TESseract - the 4 dimensional asset manager</title>
     <script src="http://code.jquery.com/jquery.min.js"></script>
+
+    <!--<script src="http://code.jquery.com/jquery.min.js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="semantic/dist/semantic.min.js"></script>-->
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width:100%;
+        overflow: hidden;
+      }
+
+      
+      .row-table tr {
+          height:20px;
+          box-sizing: border-box;
+          overflow: hidden;
+      }
+      
+      .row-table td {
+        box-sizing: border-box;
+        border:1px solid silver;
+        padding: 2px;
+        overflow: hidden;
+        height:20px;
+        line-height: 20px;
+        cursor: default;
+      }
+      
+      .buffer {
+        overflow: hidden;
+      }
+      
+      .flex-header {
+        background-color: lightgray;
+        height:100px;
+      }
+      .flex-parent {
+        width: 100%;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: flex-start; /* align items in Main Axis */
+        align-items: stretch; /* align items in Cross Axis */
+        align-content: stretch; /* Extra space in Cross Axis */
+                
+        background: rgba(255, 255, 255, .1);
+    }
+    
+      .flex-content {
+        flex:1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; /* align items in Main Axis */
+        align-items: stretch; /* align items in Cross Axis */
+        align-content: stretch; /* Extra space in Cross Axis */
+        overflow: auto;
+      }
+      .row-table {
+             border-collapse: collapse;
+             box-sizing: border-box;
+             border:1px solid silver;
+        }
+      .row-table input {
+        width: 100%;
+        border-width: 0px;
+      }
+      .focused {
+        outline:3px solid teal !important;
+      }
+      
+
+      .row-table td.selected {
+        background-color: lightgray;
+      }
+
+      .text-ellipsis {
+        width: 100%;
+        overflow: hidden;
+        word-wrap: normal;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      </style>
   </head>
   <body>
     <div id="content" className="container"></div>
+    
     <script type="text/javascript" src="dist/vendor.js"></script>
     <script type="text/javascript" src="dist/bundle.js"></script>
+   <script>
+    // if(navigator.userAgent.match(/Trident\/7\./)) {
+      
+        // var scrollContainer = document.getElementsByClassName("flex-content")[0]
+        // scrollContainer.addEventListener("mousewheel", function(e) {
+        //   console.log("@@@@wheeeel",e.wheelDelta)
+        //   e.preventDefault()
+        // })
+    //     // $('.flex-content').on("mousewheel", function () {
+    //     //     console.log("!")
+    //     //     event.preventDefault();
+    //     //     var wd = event.wheelDelta;
+    //     //     console.log("wheel", wd)
+    //     // });
+    // }
+   
+   </script> 
   </body>
 </html>
