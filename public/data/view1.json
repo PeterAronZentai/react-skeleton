@@ -1,0 +1,281 @@
+{
+    "name": "The first view",
+    "dataSource": {
+        "collection": "ProductRecords",
+        "filter" : "field = 12 and field2 = 42"
+    },
+    "columns": [
+          {
+            "fieldName": "Shootlist Date",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "@condition": "???aggregate condition",
+                "color":"teal",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em"
+            }]
+        },
+        {
+            "fieldName": "Delivery Date",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "@condition": "???aggregate condition",
+                "color":"teal",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em"
+            }]
+        },
+        {
+            "fieldName": "Status",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 150
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },       
+        {
+            "fieldName": "Division",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 150
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },
+
+        {
+            "fieldName": "Colour Code",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 150
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },
+
+        {
+            "fieldName": "Item No.",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 80
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },        
+        {
+            "fieldName": "Division Code",
+            "display":  "LabelDisplay",
+            "editor":     "TextEditor",
+            "style": {
+                "color":"black",
+                "width":140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":"120px"
+            }]
+        },
+        {
+            "fieldName": "Description",
+            "display":  "LabelDisplay",
+            "editor":     "TextEditor",
+            "style": {
+                "color":"black",
+                "width": 200
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":"120px"
+            }]
+        },        
+        {
+            "fieldName": "Model shot",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 100
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":"120px"
+            }]
+        },
+        {
+            "fieldName": "Model shot done",
+            "display": "TickBox",
+            "editor":"TickBox",
+            "style": {
+                "color":"black",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":"120px"
+            }]
+        },
+        {
+            "fieldName": "Video uploaded",
+            "display": "TrickBox",
+            "editor":"TrickBox",
+            "style": {
+                "color":"black",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },
+        {
+            "fieldName": "360",
+            "display": "TrickBox",
+            "editor":"TrickBox",
+            "style": {
+                "color":"black",
+                "width": 80
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },
+        {
+            "fieldName": "All done",
+            "display": "TickBox",
+            "editor":"TickBox",
+            "style": {
+                "color":"black",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },
+                {
+            "fieldName": "Group Code",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },
+                {
+            "fieldName": "Season Code",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },
+          {
+            "fieldName": "Category Code",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },
+         {
+            "fieldName": "STYLIST ALLOCATION",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        },
+         {
+            "fieldName": "Product shot",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"black",
+                "width": 140
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":120
+            }]
+        }
+    ]
+}

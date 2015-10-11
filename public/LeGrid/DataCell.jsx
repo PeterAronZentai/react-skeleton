@@ -1,6 +1,7 @@
 import React from 'react'
 var counter = 0;
 var classnames = require('classnames')
+var FieldHandlers = require('./FieldHandlers')
 
 export default React.createClass({
     
@@ -23,14 +24,17 @@ export default React.createClass({
     
     
     componentWillUnmount() {
-        console.log("@@@will")
+        //console.log("@@@will")
     },
     
-
+    componentWillReceiveProps() {
+        //console.log("cell props", arguments)
+    },
     
-    handleClick(e) {
-        console.log(this.context)
-        this.context.selection.setFocus(this.getProperty())
+    handleMouseDown(e) {
+        //console.log(this.context)
+        //this.context.selection.setFocus(this.getProperty())
+        this.props.onMouseDown(this.props.propertyDescriptor, e)
     },
     
     getModelValue() {
@@ -44,23 +48,30 @@ export default React.createClass({
     },
     
     handleChange(e) {
-        console.log("handle state")
+        //console.log("handle state")
         this.props.dataObject[this.props.column.fieldName] = e.target.value
     },
     
     getControl() {
-        if (this.props.dataObject.editMode) {
-            return <input ///> 
-                    value={this.getModelValue()} onChange={this.handleChange} />
+        var FieldHandler;
+        if (this.props.column) {
+            if (this.props.column.editor && this.props.focused) {
+                //console.log("selecting editor")
+                FieldHandler = FieldHandlers[this.props.column.editor];
+            }
+            else if (this.props.column.display) {
+                FieldHandler = FieldHandlers[this.props.column.display]
+            }
+            var result = <FieldHandler field={this.props.propertyDescriptor} />
+            return result;
         }
-        if (this.state.debugMode) {
-            return <div><span>{this.props.rowIndex}:{this.props.columnIndex}</span></div>
-        }
+        //console.log("getControl defauling")
         return <div className="text-ellipsis">{this.getModelValue()}</div>
     },
     
     render() {
-        return <td className={this.props.className} onClick={this.props.onClick}>
+        //console.log("cell render", this.props.focused, this.props.column.fieldName)
+        return <td className={this.props.className} onMouseDown={this.handleMouseDown} onClick={this.handleClick}>
                 {this.getControl()}
                </td>
     }

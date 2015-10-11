@@ -1,5 +1,5 @@
 import React from 'react'
-import Spreadsheet from './LeGrid/SpreadsheetEx.jsx'
+import Spreadsheet from './LeGrid/Spreadsheet.js'
 
 
 

@@ -31,21 +31,15 @@ export default React.createClass({
         //this.logger("should", arguments);
         return true;
     },
-    
-    getRowStyle() {
-        return this.props.dataObject['$rowStyle'];
-    },
-    
+        
      getCellClass(property) {
         return classnames({
             focused:this.context.selection.isInFocus(property),
             selected: this.context.selection.isInSelection(property)
         });
-        //return this.context.selection.isInFocus(this.getProperty()) ? "focused" : ""
-        //return (this.state.selected ? "selected" : "")  
     },
     
-    getPropertyDescriptor(dataObject, fieldName) {
+    getPropertyDescriptor(dataObject, fieldName, rowIndex) {
         var pd =  {
             fieldName,
             dataObject,
@@ -55,13 +49,18 @@ export default React.createClass({
             },
             get value() {
                 return pd.dataObject[pd.fieldName]
+            },
+            set value(value) {
+                pd.dataObject[pd.fieldName] = value
             }
         }
         return pd;
     },
 
-    handleCellClick(pd) {
-        this.context.selection.setFocus(pd)
+    handleCellMouseDown(pd, evt) {
+        //console.log("cell click", )
+        var nevt = evt.nativeEvent;
+        this.context.selection.setFocus(pd, nevt.ctrlKey)
     },
     
      handleSelectionChange(evt, newFocus, oldFocus) {
@@ -76,32 +75,37 @@ export default React.createClass({
             if (needsUpdate) {
                 this.forceUpdate()
             }
-            
-//        if (newFocus.equals(this.getProperty()) || (oldFocus && oldFocus.equals(this.getProperty()))) {
-//
-//        }
-  
     },
     
+    getRowStyle() {
+        var c = this.props.dataObject.color || (this.props.dataObject.color = "rgba(" + Math.round(Math.random() * 255) +"," + Math.round(Math.random() * 255) + "," + Math.round(Math.random() * 255) + ",0.3)")
+        return {}
+    },
     render() {
+
         //this.logger("row render" + this.props.columns.length)
         //console.log(this.propCache)
         var propCache
         propCache = this.propCache = {};
         this.objectId = this.props.dataObject.id
         
-        return <tr> 
-                    <td className="row-header">...</td>
-                    <td className="row-caption">{this.props.dataObject.id}</td>
-                    <td>{this.props.columns.length}</td>
+        return <tr style={this.getRowStyle()}> 
+                    <td className="row-header">{this.props.rowIndex}</td>
                     {this.props.columns.map( (column, index) => {
                        var pd = this.getPropertyDescriptor(this.props.dataObject, column.fieldName)
                        this.propCache[pd.key] = pd;
                        return <DataCell propertyDescriptor={pd} 
-                                  onClick={this.handleCellClick.bind(this, pd)}
-                                  className={this.getCellClass(pd) }
-                                  dataObject={this.props.dataObject} key={index} column={column} rowIndex={this.props.rowIndex} columnIndex={index} />
+                                  onMouseDown={this.handleCellMouseDown}
+                                  className={this.getCellClass(pd)}
+                                  dataObject={this.props.dataObject}
+                                  focused={this.context.selection.isInFocus(pd)}
+                                  selected={this.context.selection.isInSelection(pd)}
+                                  column={column} 
+                                  key={index} 
+                                  rowIndex={this.props.rowIndex} 
+                                  columnIndex={index} />
                     })} 
+                  <td style={{width:'100%'}}></td>
                </tr>
     }
 })

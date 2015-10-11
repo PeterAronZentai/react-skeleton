@@ -3,43 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <title>TESseract - the 4 dimensional asset manager</title>
-    <script src="http://code.jquery.com/jquery.min.js"></script>
-    <style>
-        .row-table {
-          width:100%
-        }
-      </style>
-  </head>
-  <body>
-    <div id="content" className="container"></div>
     
     <script>
-        // var t = document.createElement("table")
-        // t.classList.add("row-table")
-        // for(var j = 0; j < 5000; j++) {
-        //   var tr = document.createElement("tr")
-        //   for(var i = 0 ; i < 20; i++) {
-        //     var td = document.createElement("td")
-        //     var s = document.createElement("span")
-        //     s.textContent = j.toString()
-        //     var s2 = document.createElement("span")
-        //     s2.textContent = ":"
-        //     var s3 = document.createElement("span")
-        //     s3.textContent = i.toString()
-        //     var d = document.createElement("div")
-        //     d.appendChild(s)
-        //     d.appendChild(s2)
-        //     d.appendChild(s3)
-        //     td.appendChild(d)
-        //     tr.appendChild(td)
-        //     td.addEventListener("click", function(e) {
-        //       this.style.backgroundColor = 'teal'
-        //     })
-        //   }
-        //   t.appendChild(tr)
-        // }
+        var hold = [];
+        var holdset = new Set()
+        var maxi = 1000000;
+        var maxf = 20;
+        var holdo = {}
+        console.time("a")
         
-        // document.getElementById("content").appendChild(t)
-      </script>
+        function Oo(args) {
+            if (args)
+            for(var j = 0; j < args.length; j++) {
+                this["field" + j] = args[j]
+            }
+        }
+
+        var args = []
+        for(var f = 0; f < maxf; f++) {
+            args.push(f)
+        }
+        var _o = new Oo(args);
+
+        
+        for(var i = 0; i < maxi;i++) {
+            var o = new Oo();
+            for(var f = 0; f < maxf; f++) {
+                o["field" + f] = f;
+            }
+            //holdset.add(o)
+            hold.push(o);
+            
+            // var args = []
+            // for(var f = 0; f < maxf; f++) {
+            //     args.push(f)
+            // }
+            
+            // var o = new Oo(args);
+
+            // var o = []
+            // for(var f = 0; f < maxf; f++) {
+            //     o.push(f);
+            // }
+            
+            //holdo[i] = o
+            //hold.push(o);
+            //holdset.add(o)
+        }
+        console.timeEnd("a")
+        
+        console.time("stringify")
+        var holdstr = JSON.stringify(hold)
+        console.timeEnd("stringify")
+        
+        console.time("rev")
+        var holdrev = JSON.parse(holdstr)
+        console.timeEnd("rev")
+        hold = undefined;
+        holdstr = undefined;
+        
+        console.time("b")
+        var a = hold[123]
+        console.log(a)
+        console.timeEnd("b")
+        console.time("c")
+        var a = hold[123]
+        console.log(a)
+        console.timeEnd("c")
+   </script>
+  </head>
+  <body class="col-container">
+
   </body>
 </html>

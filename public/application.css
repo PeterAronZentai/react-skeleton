@@ -1,0 +1,163 @@
+    html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+    }
+
+    .row-table {
+        table-layout:fixed;
+        width:100%
+    }
+    
+    .row-table tr {
+        height:11px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .row-table td {
+        box-sizing: border-box;
+        border:1px solid rgba(0,0,0,0.1);
+        overflow: hidden;
+        line-height: 18px;
+        cursor: default;
+        padding: 2px;
+        font-size:10pt;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif'
+    }
+    
+    .buffer {
+    overflow: hidden;
+    }
+    
+    .flex-header {
+    background-color: rgba(0,0,0,0);
+    flex-shrink: 1;
+    }
+    .flex-parent {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch; /* align items in Cross Axis */
+    align-content: stretch; /* Extra space in Cross Axis */
+            
+    background: rgba(255, 255, 255, .1);
+}
+
+    .flex-content {
+        display: flex;
+        flex-direction: row;
+        flex-grow:1;
+        align-content: stretch;
+        align-items: stretch;
+        height:100%;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    
+    .main-table {
+        order:1;
+        flex-grow:1;
+        display:flex;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        position: relative;
+        
+    } 
+    .vscrollbar {
+        order:2;
+        background-color:rgba(120,120,120,0.1);
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width:20px;
+    }
+    
+    .hscrollbar {
+        background-color:rgba(120,120,120,0.1);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height:20px;
+    } 
+    
+    .vscroller {
+        position: relative;
+        right:0;
+        top:0;
+        height:50%;
+        width:50px;
+        background-color: rgba(200,200,200,0.8);
+        box-sizing: border-box;
+    }
+    
+    .hscroller {
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        width: 50%;
+        height:20px;
+        box-sizing: border-box;
+        background-color: rgba(200,200,200,0.8);
+    }
+    .row-table {
+        border-collapse: collapse;
+        box-sizing: border-box;
+    }
+    .row-table input {
+        width: 100%;
+        border-width: 0px;
+    }
+    .focused {
+    outline:3px solid teal !important;
+    }
+    
+
+    .row-table td.selected {
+    background-color: lightgray;
+    }
+
+    .text-ellipsis {
+    width: 100%;
+    overflow: hidden;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+    
+    .row-header,.column-header {
+        background-color: rgba(0,0,0,0.05);
+    }
+    
+    .caption-row tr{
+        height: 50px
+    }
+
+    .caption-row  {
+        box-shadow:3px 3px 0px 0px rgba(0,0,0,0.1);
+    }    
+    .caption-row th {
+        border:1px solid #d0d0d0;
+    }
+    
+    .corner-cell {
+        width: 60px;
+        background-color: rgba(0,0,0,0.05);
+    }
+
+div:focus, textarea:focus, input:focus{
+    outline: 0;
+}

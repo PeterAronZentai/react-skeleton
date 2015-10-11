@@ -1,0 +1,69 @@
+{
+    "name": "The first view",
+    "dataSource": {
+        "collection": "ProductRecords",
+        "filter" : "field = 12 and field2 = 42"
+    },
+    "columns": [
+        {
+            "fieldName": "Shootlist Date",
+            "display": "LabelDisplay",
+            "editor":  "TextEditor",
+            "style": {
+                "@condition": "???aggregate condition",
+                "color":"magenta",
+                "width": "200px"
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em"
+            }]
+        },
+        {
+            "fieldName": "Colour Code",
+            "display": "LabelDisplay",
+            "editor":"TextEditor",
+            "style": {
+                "color":"gold",
+                "width": "200px"
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":"120px"
+            }]
+        },
+        {
+            "fieldName": "Division Code",
+            "display": "LabelDisplay",
+            "edit":"TextEditor",
+            "style": {
+                "color":"gold",
+                "width": "200px"
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":"120px"
+            }]
+        },
+        {
+            "fieldName": "Model shot",
+            "display": "LabelDisplay",
+            "edit":"TextEditor",
+            "style": {
+                "color":"gold",
+                "width": "200px"
+            },
+            "cellStyle": [{
+                "@condition": "Status == 'post production'",
+                "color": "red",
+                "font-size":"0.8em",
+                "width":"120px"
+            }]
+        } 
+    ]
+}
