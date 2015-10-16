@@ -37,6 +37,7 @@
     "gulp-rtlcss": "^0.1.4",
     "gulp-watch": "^4.3.5",
     "jade": "~1.9.2",
+    "lodash": "^3.10.1",
     "map-stream": "^0.1.0",
     "morgan": "~1.5.3",
     "react": "^0.13.3",
