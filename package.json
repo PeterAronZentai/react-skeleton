@@ -40,10 +40,10 @@
     "lodash": "^3.10.1",
     "map-stream": "^0.1.0",
     "morgan": "~1.5.3",
-    "react": "^0.13.3",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.3",
     "require-dot-file": "^0.4.0",
     "run-sequence": "^1.1.4",
-    "semantic-ui": "^2.1.4",
     "serve-favicon": "~2.2.1",
     "yamljs": "^0.2.4"
   },

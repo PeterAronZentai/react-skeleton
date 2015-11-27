@@ -71,7 +71,7 @@ gulp.task('bundle-w', function () {
 
     gutil.log('Bundling bundle JS...');
 
-    pipeline_dev = watchify(browserify('./public/Startup.jsx', watchify.args));
+    pipeline_dev = watchify(browserify('./frontend/Startup.jsx', watchify.args));
     
     dependencies.forEach(function(d) {
         pipeline_dev.external(d)
@@ -85,7 +85,7 @@ gulp.task('bundle-w', function () {
 
 gulp.task('bundle', function () {
     watchify.args.debug = true;
-    var pipeline = browserify('./public/Startup.jsx', watchify.args);
+    var pipeline = browserify('./frontend/Startup.jsx', watchify.args);
     pipeline.transform(babelify.configure({ }));
 
     dependencies.forEach(function(d) {
@@ -96,5 +96,5 @@ gulp.task('bundle', function () {
 
 
 gulp.task('default', ['bundle-w'], function () {
-    browserSync.init({  proxy: 'http://localhost:3000' })
+    browserSync.init({  proxy: 'http://localhost:3000', port:9999 })
 });
